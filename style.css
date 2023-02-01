@@ -1,0 +1,263 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-color: hsl(36, 100%, 99%);
+}
+::-webkit-scrollbar{
+    background-color: white;
+    width: 10px;
+    scrollbar-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color:  hsl(35,77%,62%);
+    border-radius: 20px;
+    box-shadow:    3px 1px 4px 2px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(35, 92%, 51%);
+}
+a{
+    user-select: none;
+}
+*::selection {
+    background-color: hsl(35, 77%, 62%);
+}
+nav{
+    width: auto;
+    height: 10vh;
+    display: grid;
+    padding: 0 70px;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+nav div h1{
+    font-family: 'Inter-ExtraBold';
+    font-size: 40px;
+    font-weight: 800;
+    color: black;
+}
+nav div a{
+    text-decoration: none;
+    font-family: 'Inter-Regular';
+    font-size: 15px;
+    color: grey;
+    transition: .3s;
+}
+nav div a:hover{
+    color:hsl(5, 85%, 63%);
+}
+nav div ul{
+    display: flex;
+    gap:50px;
+    list-style: none;
+}
+main{
+    width: 100%;
+    height: 650px;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    padding: 0 70px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width:991px) {
+    main{
+        height: fit-content;
+        grid-template-rows: 3fr 0.5fr 1fr 1fr 1fr 1fr;
+    }
+    .main-content{
+        grid-column: 1/-1 !important;
+    }
+    main .aside-content{
+        grid-row: 2/4 !important;
+        grid-column: 1/-1 !important;
+    }
+    main .other-news1{
+        grid-row: 4/5 !important;
+        grid-column: 1/-1 !important;
+    }
+    main .other-news2{
+        grid-row: 5/6 !important;
+        grid-column: 1/-1 !important;
+    }
+    main .other-news3{
+        grid-row: 6/7 !important;
+        grid-column: 1/-1 !important;
+    }
+
+}
+
+
+/* Main Content Styling Starts */
+.main-content{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.3fr 1fr;
+}
+@media screen and (max-width:767px) {
+    .main-content{
+        grid-template-rows: 1.3fr 1fr 1fr !important;
+    }
+    .main-text{
+        grid-row: 2/3 !important;
+        grid-column: 1/3 !important;
+    }
+    .main-text div{
+        max-width: 100% !important;
+    }
+    .main-content .other-text{
+        grid-column: 1/-1 !important;
+        grid-row: 3/-1 !important;
+    }
+}
+.main-content .main-image{
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+.main-content .main-text{
+    /* background-color: red; */
+    grid-row: 2/-1;
+    grid-column: 1/3;
+}
+.main-text{
+    padding-top: 30px;
+}
+.main-text div{
+    max-width: 50%;
+}
+.main-text h1{
+    font-family:'Inter-ExtraBold';
+    color:hsl(240, 100%, 5%);
+    font-size: 50px;
+}
+.main-content .other-text{
+    grid-row: 2/-1;
+    grid-column: 2/-1;
+    padding-top: 30px;
+}
+.other-text p{
+    font-size: 17px;
+    color: hsl(236, 13%, 42%);
+    margin-bottom: 40px;
+    font-family: 'Inter-Regular';
+}
+.other-text .btn{
+    background-color: hsl(5, 85%, 63%);
+    color: white;
+    padding: 10px 40px;
+    transition: .3s;
+    text-decoration: none;
+    font-family: 'Inter-Regular';
+    font-size: 16px;
+}
+.other-text .btn:hover{
+    background-color: hsl(240, 100%, 5%);
+    transition: .3s;
+}
+/* Main ::content styling ends */
+
+/* Aside content styling  starts */
+main .aside-content{
+    grid-column: 3/-1;
+    background:  hsl(240, 100%, 5%);
+    grid-row: 1/2;
+    padding: 30px 20px;
+}
+.aside-content h2{
+ color: hsl(35, 77%, 62%);
+ font-size: 40px;
+}
+.aside-content ul{
+    width: auto;
+    height: 90%;
+    list-style: none;
+    color: white;
+}
+.aside-content li{
+    width: auto;
+    height: 33%;
+    display: grid;
+    align-content: center;
+}
+.aside-content li:nth-child(2){
+    border-top: 1px solid rgb(184, 181, 181);
+    border-bottom: 1px solid rgb(184, 181, 181);
+}
+.aside-content h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.aside-content a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter-Bold';
+}
+.aside-content a:hover{
+    color: hsl(35, 77%, 62%);
+}
+.aside-content p{
+    color: rgb(184, 181, 181);
+}
+main .other-news1{
+    grid-column: 1/2;
+    grid-row: 2/-1;
+}
+main .other-news2{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+}
+main .other-news3{
+    grid-column: 3/4;
+    grid-row: 2/-1;
+}
+.other-news{
+    display: flex;
+    gap: 30px;
+}
+.other-news .other-news-pic{
+    width: 35%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.other-news .pic1{
+    background-image: url('/assets/images/image-retro-pcs.jpg');
+}
+.other-news .pic2{
+    background-image: url('/assets/images/image-top-laptops.jpg');
+}
+.other-news .pic3{
+    background-image: url('/assets/images/image-gaming-growth.jpg');
+}
+.other-news-text h3{
+    font-family: 'Inter-Bold';
+    font-size: 30px;
+    color: hsl(236, 13%, 42%);
+    margin-bottom: 10px;
+}
+.other-news-text h4{
+    font-family: 'Inter-ExtraBold';
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.other-news-text a{
+    text-decoration: none;
+    color: hsl(240, 100%, 5%);
+}
+.other-news-text p{
+    font-family: 'Inter-Regular';
+    color: grey;
+
+}
