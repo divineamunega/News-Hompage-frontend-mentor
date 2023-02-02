@@ -5,6 +5,7 @@
 }
 body{
     background-color: hsl(36, 100%, 99%);
+    overflow-x:hidden ;
 }
 ::-webkit-scrollbar{
     background-color: white;
@@ -26,12 +27,17 @@ a{
     background-color: hsl(35, 77%, 62%);
 }
 nav{
-    width: auto;
+    width: 100vw;
     height: 10vh;
     display: grid;
     padding: 0 70px;
     grid-template-columns: 2fr 1fr;
     align-items: center;
+    position: sticky;
+    z-index: 1;
+    top:0;
+    background-color: white;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
 }
 nav div h1{
     font-family: 'Inter-ExtraBold';
@@ -46,6 +52,19 @@ nav div a{
     color: grey;
     transition: .3s;
 }
+@media screen and (max-width:991px) {
+    .nav-content{
+        display: none !important;
+    }
+    .off-canvas{
+        display: block !important;
+    }
+    nav .navbar_toggle{
+        display: block !important;
+        margin-left:auto;
+    }
+
+}
 nav div a:hover{
     color:hsl(5, 85%, 63%);
 }
@@ -53,6 +72,47 @@ nav div ul{
     display: flex;
     gap:50px;
     list-style: none;
+}
+nav .navbar_toggle{
+    display: none;
+    cursor: pointer;
+}
+.off-canvas{
+    width: 0%;
+    transition:ease-in-out .5s;
+    height: 100%;
+    margin: 0;
+    z-index: 100;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.off-canvas-closebtn{
+    position:relative;
+    top: 20px;
+    left:85%;
+    cursor: pointer;
+}
+.off-canvas-content{
+    margin-top: 150px;
+}
+.off-canvas-content ul{
+    width: auto;
+    list-style: none;
+    font-weight:bold;
+    font-size: 30px;
+}
+.off-canvas-content li{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.off-canvas-content a{
+    color: black;
+    text-decoration: none;
+}
+.off-canvas-content a:hover, .off-canvas a:focus{
+    color: hsl(35, 77%, 62%);
 }
 main{
     width: 100%;
@@ -68,7 +128,7 @@ main{
 @media screen and (max-width:991px) {
     main{
         height: fit-content;
-        grid-template-rows: 3fr 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 3fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
     }
     .main-content{
         grid-column: 1/-1 !important;
@@ -226,7 +286,7 @@ main .other-news3{
     gap: 30px;
 }
 .other-news .other-news-pic{
-    width: 35%;
+    width: 90%;
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -259,5 +319,4 @@ main .other-news3{
 .other-news-text p{
     font-family: 'Inter-Regular';
     color: grey;
-
 }

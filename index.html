@@ -38,7 +38,7 @@
   </div> -->
   <nav>
     <div><a href="#"><h1>W.</h1></a></div>
-    <div>
+    <div class="nav-content">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">New</a></li>
@@ -47,7 +47,22 @@
         <li><a href="#">Categories</a></li>
       </ul>
     </div>
+    <div class="navbar_toggle">
+      <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/><path d="M0 0h40v3H0z"/></g></svg>
+    </div>
   </nav>
+  <div class="off-canvas">
+    <svg class="off-canvas-closebtn"width="32" height="31" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z"/><path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z"/></g></svg>
+    <div class="off-canvas-content">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Popular</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </div>
+  </div>
   <main>
     <div class='main-content'>
       <div class="main-image">
@@ -108,5 +123,20 @@
       </div>
     </div>
   </main>
+  <script>
+    const togglebutton = document.querySelector('.navbar_toggle');
+    const exitnavButton = document.querySelector('.off-canvas-closebtn');
+    const off_canvas = document.querySelector('.off-canvas');
+    togglebutton.addEventListener('click', function(){
+      off_canvas.style.width = '250px';
+      document.body.style.backgroundColor = 'rgba(0,0,0,0.3)';
+      // document.body.style.overflow = 'hidden';
+    })
+    exitnavButton.addEventListener('click', function(){
+      off_canvas.style.width = '0%';
+      document.body.style.backgroundColor = 'rgba(0,0,0,0)';
+      // document.body.style.overflow = 'visible';
+    })
+  </script>
 </body>
 </html>
